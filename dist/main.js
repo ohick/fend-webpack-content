@@ -90,10 +90,35 @@
 /*!*****************************!*\
   !*** ./src/client/index.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log('yellow')\n\n//# sourceURL=webpack:///./src/client/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_formHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/formHandler */ \"./src/client/js/formHandler.js\");\n/* harmony import */ var _js_nameChecker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/nameChecker */ \"./src/client/js/nameChecker.js\");\n/* eslint-disable no-unused-vars */\nconsole.log('yellow');\n\n\n\n//# sourceURL=webpack:///./src/client/index.js?");
+
+/***/ }),
+
+/***/ "./src/client/js/formHandler.js":
+/*!**************************************!*\
+  !*** ./src/client/js/formHandler.js ***!
+  \**************************************/
+/*! exports provided: handleSubmit */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"handleSubmit\", function() { return handleSubmit; });\n/* eslint-disable require-jsdoc */\nfunction handleSubmit(event) {\n  event.preventDefault(); // check what text was put into the form field\n\n  var formText = document.getElementById('name').value;\n  checkForName(formText);\n  console.log('::: Form Submitted :::');\n  fetch('http://localhost:8080/test').then(function (res) {\n    return res.json();\n  }).then(function (res) {\n    document.getElementById('results').innerHTML = res.message;\n  });\n}\n\n//# sourceURL=webpack:///./src/client/js/formHandler.js?");
+
+/***/ }),
+
+/***/ "./src/client/js/nameChecker.js":
+/*!**************************************!*\
+  !*** ./src/client/js/nameChecker.js ***!
+  \**************************************/
+/*! exports provided: checkForName */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"checkForName\", function() { return checkForName; });\n// eslint-disable-next-line require-jsdoc\nfunction checkForName(inputText) {\n  console.log('::: Running checkForName :::', inputText);\n  var names = ['Picard', 'Janeway', 'Kirk', 'Archer', 'Georgiou'];\n\n  if (names.includes(inputText)) {\n    alert('Welcome, Captain!');\n  }\n}\n\n//# sourceURL=webpack:///./src/client/js/nameChecker.js?");
 
 /***/ })
 
