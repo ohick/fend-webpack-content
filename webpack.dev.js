@@ -6,7 +6,6 @@ module.exports = {
   mode: 'development',
   entry: './src/client',
   output: {
-
   },
   module: {
     rules: [
